@@ -23,3 +23,7 @@ Open terminal with admin privilege
     # check if the task is runing successfully
     just status-task
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -2,6 +2,12 @@
 
 gamepad-on-steam-on is a small and lightweight exe and a scheduled task that runs on Windows startup, which will automatically open Steam in background when a gamepad is connected (if Steam is not already running).
 
+<video
+    src="https://github.com/user-attachments/assets/b8ca0b25-20fe-444e-a56e-b313d7cff3b5"
+    autoplay
+    >
+</video>
+
 ## How to setup
 
 ### Pre-requisite
@@ -15,7 +21,7 @@ Open terminal with admin privilege
 
 ```bash
     # clone repo
-    git clone
+    git clone https://github.com/JoseIgnacioGC/gamepad-on-steam-on.git
 
     # install the scheduled task
     just install-task

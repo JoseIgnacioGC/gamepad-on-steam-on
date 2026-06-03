@@ -10,9 +10,14 @@ default: install-task
 install-task:
     cargo build --release
     New-Item -ItemType Directory -Force -Path "{{install_dir}}" | Out-Null
-    Copy-Item -Force "${PWD}\\target\\release\\gamepad-on-steam-on.exe" "{{exe_path}}"
-    schtasks /Create /F /RL HIGHEST /SC ONLOGON /TN "GamepadOnSteamOn" /TR "{{exe_path}}" 
-    start-ScheduledTask -TaskName GamepadOnSteamOn
+    Copy-Item -Force "${PWD}\target\release\gamepad-on-steam-on.exe" "{{exe_path}}"
+    
+    $Action = New-ScheduledTaskAction -Execute "{{exe_path}}"; \
+    $Trigger = New-ScheduledTaskTrigger -AtLogOn; \
+    $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit 0; \
+    Register-ScheduledTask -TaskName "GamepadOnSteamOn" -Action $Action -Trigger $Trigger -Settings $Settings -RunLevel Highest -Force
+    
+    Start-ScheduledTask -TaskName "GamepadOnSteamOn"
 
 # Admin privilege required
 uninstall-task:

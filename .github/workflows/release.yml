@@ -1,0 +1,32 @@
+name: Build and Release MSI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Publish Release
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install cargo-wix
+        run: cargo install cargo-wix
+
+      - name: Build .msi installer
+        run: cargo wix --nocapture
+
+      - name: Create GitHub Release and upload .msi
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/wix/*.msi
+          generate_release_notes: true

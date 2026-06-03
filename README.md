@@ -13,7 +13,7 @@ gamepad-on-steam-on is a small and lightweight exe and a scheduled task that run
 ### Pre-requisite
 
 - [cargo](https://rust-lang.org/tools/install/)
-- [just](https://github.com/casey/just)
+- [cargo-wix](https://github.com/volks73/cargo-wix)
 
 ### Run
 
@@ -23,11 +23,8 @@ Open terminal with admin privilege
     # clone repo
     git clone https://github.com/JoseIgnacioGC/gamepad-on-steam-on.git
 
-    # install the scheduled task
-    just install-task
-
-    # check if the task is runing successfully
-    just status-task
+    # build code and execute msi installer
+    cargo wix --install
 ```
 
 ## License

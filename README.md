@@ -21,7 +21,7 @@ Open terminal with admin privilege
 
 ```bash
     # clone repo
-    git clone
+    git clone https://github.com/JoseIgnacioGC/gamepad-on-steam-on.git
 
     # install the scheduled task
     just install-task

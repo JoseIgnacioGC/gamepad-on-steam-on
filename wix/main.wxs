@@ -231,6 +231,13 @@
         Id='WixUIDialogBmp' Value='wix\Dialog.bmp'/>-->
 
         <CustomAction
+            Id="KillProcess"
+            Directory="APPLICATIONFOLDER"
+            ExeCommand="cmd.exe /c taskkill /F /IM &quot;gamepad-on-steam-on.exe&quot;"
+            Execute="immediate"
+            Return="ignore" />
+
+        <CustomAction
             Id="LaunchApp"
             FileKey="exe0"
             ExeCommand=""
@@ -239,6 +246,8 @@
             Return="asyncNoWait" />
 
         <InstallExecuteSequence>
+            <Custom Action="KillProcess" Before="InstallValidate">Installed</Custom>
+
             <Custom Action="LaunchApp" After="InstallFinalize">NOT Installed</Custom>
         </InstallExecuteSequence>
     </Product>

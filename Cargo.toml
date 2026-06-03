@@ -3,7 +3,26 @@ name = "gamepad-on-steam-on"
 version = "0.1.0"
 edition = "2024"
 
+authors = ["Jose Leiva <email.joseleiva@gmail.com>"]
+description = "Automatically opens Steam in the background when a gamepad is connected."
+repository = "https://github.com/JoseIgnacioGC/gamepad-on-steam-on"
+license = "MIT"
+
 [dependencies]
 ctrlc = "3.5.2"
 hidapi = "2.6.6"
-windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp", "Win32_System_LibraryLoader", "Win32_Devices_HumanInterfaceDevice", "Win32_Security", "Win32_Graphics_Gdi", "Win32_UI_Input", "Win32_UI_Input_XboxController"] }
+windows = { version = "0.62.2", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_LibraryLoader",
+    "Win32_Devices_HumanInterfaceDevice",
+    "Win32_Security",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_Input",
+    "Win32_UI_Input_XboxController",
+] }
+
+[package.metadata.wix]
+eula = false

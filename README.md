@@ -10,7 +10,7 @@
 
 ## Install
 
-Download the latest .msi release from [releases]() (or build and install it yourself, see [below](#how-to-setup)).
+Download the latest `.msi` release from [releases](https://github.com/JoseIgnacioGC/gamepad-on-steam-on/releases) (or build and install it yourself, see [below](#how-to-setup)).
 
 ## Uninstall
 

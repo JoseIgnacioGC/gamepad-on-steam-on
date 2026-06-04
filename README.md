@@ -30,8 +30,6 @@ Download the latest `.msi` release from [releases](https://github.com/JoseIgnaci
 
 ### Build and install
 
-Open terminal with admin privilege
-
 ```bash
     # clone repo
     git clone https://github.com/JoseIgnacioGC/gamepad-on-steam-on.git
